@@ -1,5 +1,5 @@
 <template lang='pug'>
-header.vue-common-navbar.navbar(
+header.vue-common-navbar.navbar(:class='{"is-fixed-top": isFixed}'
         role='navigation' aria-label='main navigation')
     .container
         .navbar-brand

@@ -1,7 +1,7 @@
 <template lang='pug'>
 .vue-index(:style='{"background-image": `url("${imgs[\"back\"]}")`}')
     .reactive-title {{ reactiveTitle() }}
-    common-navbar.is-light(:brand-img='imgs["logo"]' :menus='menus')
+    common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]' :menus='menus')
 
     section.hero
         .hero-body.has-text-centered
