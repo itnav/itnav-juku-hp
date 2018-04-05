@@ -1,5 +1,5 @@
 <template lang='pug'>
-.vue-index(:style='{"background-image": `url("${imgs[\"back\"]}")`}')
+.vue-index
     .reactive-title {{ reactiveTitle() }}
     common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]' :menus='menus')
 
@@ -24,15 +24,8 @@
     section.section
         h2.has-text-centered 〜お申し込み〜
 
-    footer.footer
-        .content.columns.has-text-centered.is-multiline
-            .column.is-4: img(:src='imgs["itnav"]')
-            .column.is-8.columns.is-multiline
-                .column.is-half: p 一般社団法人イトナブ石巻
-                .column.is-half: p Tel : 0225-90-4282
-                .column.is-half: p Tel : 〒986-0822 宮城県石巻市中央2-10-21 サトミビル1F
-                .column.is-half: p Mail : info@itnav.jp
-            .column.is-12: p copyrights
+    section.main.section
+        sample
 </template>
 
 <script lang='ts'>
@@ -52,35 +45,8 @@ Vue.use(Buefy);
  */
 @Component
 export default class Index extends RootVue {
-    public title = '月刊イトナブ塾';
-    public subtitle = 'HP';
-    protected imgs = {
-        'back': require('@/resources/img/background.jpg'),
-        'logo': require('@/resources/img/logo.png'),
-        'photo1': require('@/resources/img/photo1.jpg'),
-        'itnav': require('@/resources/img/itnav-logo.png')
-    };
-
-    protected menus = [
-        { text: 'イトナブ塾とは', onClick: () => {
-            this.$snackbar.open('home');
-        } },
-        { text: '講師', onClick: () => {
-            this.$snackbar.open('home');
-        } },
-        { text: 'イトナブとは', onClick: () => {
-            this.$snackbar.open('home');
-        } },
-        { text: 'アクセス', onClick: () => {
-            this.$snackbar.open('home');
-        } },
-        { text: 'スケジュール', onClick: () => {
-            this.$snackbar.open('home');
-        } },
-        { text: 'お申し込み', onClick: () => {
-            this.$snackbar.open('home');
-        } }
-    ] as NavbarMenuItem[];
+    public title = 'Sample';
+    public subtitle = 'Index';
 
     protected beforeCreate(): void {
         // Inner Vue 登録
@@ -93,22 +59,8 @@ export default class Index extends RootVue {
 @import 'all'
 
 .vue-index
-    width: 100%
-    overflow-x: hidden
-
-    h1
-        & > img.logo
-            width: 100%
-            height: auto
-
-    section
+    section.main
         max-width: 800px
         margin-left: auto
         margin-right: auto
-
-        &.full
-            max-width: 100%
-
-    footer.footer
-        padding-bottom: 1rem
 </style>
