@@ -3,7 +3,8 @@ header.vue-common-navbar.navbar(
         role='navigation' aria-label='main navigation')
     .container
         .navbar-brand
-            a.navbar-item {{ brand }}
+            a.navbar-item(v-if='brandImg != null'): img(:src='brandImg')
+            a.navbar-item(v-if='brand != null') {{ brand }}
 
             .navbar-burger(:class='{"is-active": showNavMenu}'
                     @click='invertShowNavMenu')
@@ -59,6 +60,8 @@ import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
 export default class CommonNavbar extends Vue {
     @Prop({type: String, default: () => ''})
     protected brand?: string;
+    @Prop({type: String, default: () => ''})
+    protected brandImg?: string;
 
     @Prop({type: Array})
     protected menus?: NavbarMenuItem[];
