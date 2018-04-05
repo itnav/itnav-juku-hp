@@ -11,7 +11,7 @@
         section.full: .vue-slideshow: img(:src='imgs["photo1"]')
 
         section.section.mid: juku-intro
-        section.section: staff-intro
+        section.section.mid: staff-intro
         section.section
             h2.has-text-centered 〜 イトナブとは 〜
         section.section

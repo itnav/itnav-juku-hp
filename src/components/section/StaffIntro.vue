@@ -75,6 +75,9 @@ export default class StaffIntro extends Vue {
     .staff
         position: relative
         width: 100%
+        max-width: 250px
+        margin-left: auto
+        margin-right: auto
         border-top-left-radius: 50% 26%
         border-top-right-radius: 50% 26%
         border-bottom-left-radius: 10% 5%
