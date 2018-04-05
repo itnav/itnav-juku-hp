@@ -106,4 +106,7 @@ export default class Index extends RootVue {
 
         &.full
             max-width: 100%
+
+    footer.footer
+        padding-bottom: 1rem
 </style>
