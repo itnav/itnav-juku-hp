@@ -7,7 +7,7 @@
         p.has-text-centered.margin-bottom プログラミングと聞くと難しいイメージを持たれますが、
         p.has-text-centered.margin-bottom ScratchやOzobotなど直感的に学べるツールを利用して初心者でもわかりやすい内容になっています
         p.has-text-centered.margin-bottom 夢中になって遊んでいると、いつの間にか学びになっている
-        p.has-text-centered.margin-bottom そんなワークショップをイトナブ塾は目指しています
+        p.has-text-centered そんなワークショップをイトナブ塾は目指しています
 
     .intros.columns.is-multiline.is-mobile
         .column.is-4(v-for='text in introTexts')
