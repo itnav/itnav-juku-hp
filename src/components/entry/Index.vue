@@ -36,7 +36,22 @@ export default class Index extends RootVue {
     };
 
     protected menus = [
-        { pack: 'fa', icon: 'home', text: 'イトナブ塾とは', onClick: () => {
+        { text: 'イトナブ塾とは', onClick: () => {
+            this.$snackbar.open('home');
+        } },
+        { text: '講師', onClick: () => {
+            this.$snackbar.open('home');
+        } },
+        { text: 'イトナブとは', onClick: () => {
+            this.$snackbar.open('home');
+        } },
+        { text: 'アクセス', onClick: () => {
+            this.$snackbar.open('home');
+        } },
+        { text: 'スケジュール', onClick: () => {
+            this.$snackbar.open('home');
+        } },
+        { text: 'お申し込み', onClick: () => {
             this.$snackbar.open('home');
         } }
     ] as NavbarMenuItem[];
