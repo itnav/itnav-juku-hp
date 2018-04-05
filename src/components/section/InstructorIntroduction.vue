@@ -26,12 +26,13 @@ type Instructor = {
 
 /**
  * Vue Component
+ * TODO: rename to StafIntro
  */
 @Component
 export default class InstructorIntroduction extends Vue {
     protected Instructors = [
         {
-            img: require('@/resources/img/tama.png'),
+            img: require('@/resources/img/instructor/tama.png'),
             nickname:'たま',
             name:'千葉 沙織',
             position:'イトナブ石巻スタッフ',
@@ -39,7 +40,7 @@ export default class InstructorIntroduction extends Vue {
             color: '#ff42f8'
         },
         {
-            img: require('@/resources/img/uk.png'),
+            img: require('@/resources/img/instructor/uk.png'),
             nickname:'UK',
             name:'加藤 奨人',
             position:'イトナブ石巻スタッフ',
@@ -47,7 +48,7 @@ export default class InstructorIntroduction extends Vue {
             color: '#f84545'
         },
         {
-            img: require('@/resources/img/yottu.png'),
+            img: require('@/resources/img/instructor/yottu.png'),
             nickname:'よっつ',
             name:'金光 宏',
             position:'イトナブ石巻スタッフ',
@@ -55,7 +56,7 @@ export default class InstructorIntroduction extends Vue {
             color: '#4b42ff'
         },
         {
-            img: require('@/resources/img/hinode.png'),
+            img: require('@/resources/img/instructor/hinode.png'),
             nickname:'日の出',
             name:'武山 将己',
             position:'イトナブ石巻スタッフ',
