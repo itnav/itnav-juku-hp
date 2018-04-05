@@ -1,5 +1,5 @@
 <template lang='pug'>
-.vue-juku-introduction
+.vue-juku-intro
     h2.title.has-text-centered 〜遊びから学びへ〜
 
     .about.margin-bottom
@@ -9,10 +9,10 @@
         p.has-text-centered.margin-bottom 夢中になって遊んでいると、いつの間にか学びになっている
         p.has-text-centered.margin-bottom そんなワークショップをイトナブ塾は目指しています
 
-    .introductions.columns.is-multiline.is-mobile
-        .column.is-4(v-for='text in introductionTexts')
-            .introduction-item
-                .introduction-body.has-text-centered
+    .intros.columns.is-multiline.is-mobile
+        .column.is-4(v-for='text in introTexts')
+            .intro-item
+                .intro-body.has-text-centered
                     h3.subtitle {{ text.title }}
                     p {{ text.description }}
 
@@ -22,7 +22,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 import VueUtil from '@/scripts/util/VueUtil';
 
-type IntroductionText = {
+type IntroText = {
     title: string;
     description: string;
 }
@@ -32,8 +32,8 @@ type IntroductionText = {
  * TODO: rename: JukuIntro
  */
 @Component
-export default class JukuIntroduction extends Vue {
-    protected introductionTexts = [
+export default class JukuIntro extends Vue {
+    protected introTexts = [
         {
             title: 'プログラミング的思考が身につく',
             description: 'パソコンに命令を出すとき、どういう順序でどのように命令を伝えればいいのか、 論理的に考えられる能力また、課題解決力や問題を分析する力がつきます'
@@ -46,20 +46,20 @@ export default class JukuIntroduction extends Vue {
             title: 'アフターフォローの充実',
             description: '月刊イトナブ塾を運営しているイトナブ石巻は 常に事務所を解放しており、小学生から大学生 まで幅広い年代の学生がITを学びにきています。イトナブ塾以外の日にちでもプログラミングを学ぶことができます'
         },
-    ] as IntroductionText[];
+    ] as IntroText[];
 }
 </script>
 
 <style lang='sass' scoped>
 @import 'variable'
 
-.vue-juku-introduction
-    .introductions.columns
+.vue-juku-intro
+    .intros.columns
         justify-content: center
         margin-left: auto
         margin-right: auto
 
-    .introduction-item
+    .intro-item
         position: relative
         border-radius: 50%
         background-color: $primary
@@ -69,7 +69,7 @@ export default class JukuIntroduction extends Vue {
             display: block
             padding-top: 100%
 
-        .introduction-body
+        .intro-body
             position: absolute
             width: 100%
             top: 14%
@@ -91,21 +91,21 @@ export default class JukuIntroduction extends Vue {
 
 
     @media screen and (max-width: 1024px)
-        .introductions.columns
+        .intros.columns
             max-width: 700px
             .column
                 width: calc(100% / 2)
 
     @media screen and (max-width: 724px)
-        .introductions.columns
+        .intros.columns
             max-width: 340px
             .column
                 width: 100%
 
     @media screen and (max-width: 340px)
-        .introductions.columns
+        .intros.columns
             font-size: 3.7vw
-        .introduction-body
+        .intro-body
             h3
                 font-size: 1.5em
 </style>

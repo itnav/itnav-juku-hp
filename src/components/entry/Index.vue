@@ -11,7 +11,7 @@
         .vue-slideshow: img(:src='imgs["photo1"]')
 
     section.section.mid
-        juku-introduction
+        juku-intro
     section.section
         staff-intro
     section.section
@@ -40,7 +40,7 @@ import VueUtil from '@/scripts/util/VueUtil';
 import RootVue from '@/components/base/RootVue';
 import CommonNavbar from '@/components/common/CommonNavbar.vue';
 import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
-import JukuIntroduction from '@/components/section/JukuIntroduction.vue'
+import JukuIntro from '@/components/section/JukuIntro.vue'
 import StaffIntro from '@/components/section/StaffIntro.vue';
 
 import Buefy from 'buefy';
@@ -84,7 +84,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, JukuIntroduction, StaffIntro]);
+        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro]);
     }
 }
 </script>
