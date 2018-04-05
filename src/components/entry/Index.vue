@@ -12,6 +12,7 @@
 
     section.section
         h2.has-text-centered 〜遊びから学びへ〜
+
     section.section
         h2.has-text-centered 〜講師紹介〜
     section.section
