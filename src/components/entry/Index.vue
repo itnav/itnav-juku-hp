@@ -3,12 +3,13 @@
     .reactive-title {{ reactiveTitle() }}
     common-navbar.is-light(:brand-img='imgs["logo"]' :menus='menus')
 
-    section.main
-        section.hero
-            .hero-body.has-text-centered
-                h1: img.logo(:src='imgs["logo"]')
+    section.hero
+        .hero-body.has-text-centered
+            h1: img.logo(:src='imgs["logo"]')
 
-        section.section
+    section.full
+        .vue-slideshow: img(:src='imgs["photo1"]')
+
 
 </template>
 
@@ -32,7 +33,8 @@ export default class Index extends RootVue {
     public subtitle = 'HP';
     protected imgs = {
         'back': require('@/resources/img/background.jpg'),
-        'logo': require('@/resources/img/logo.png')
+        'logo': require('@/resources/img/logo.png'),
+        'photo1': require('@/resources/img/photo1.jpg')
     };
 
     protected menus = [
@@ -69,11 +71,15 @@ export default class Index extends RootVue {
 .vue-index
     width: 100%
     height: 100%
+    overflow-x: hidden
 
-    section.main
+    section
         max-width: 800px
         margin-left: auto
         margin-right: auto
+
+        &.full
+            max-width: 100%
 
         img.logo
             width: 100%
