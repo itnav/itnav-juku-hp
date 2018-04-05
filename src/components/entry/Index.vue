@@ -1,5 +1,5 @@
 <template lang='pug'>
-.vue-index
+.vue-index(:style='{"background-image": `url("${imgs[\"back\"]}")`}')
     .reactive-title {{ reactiveTitle() }}
     common-navbar.is-light(:brand='title')
     common-hero.is-dark(:title='title' :subtitle='subtitle')
@@ -26,6 +26,9 @@ Vue.use(Buefy);
 @Component
 export default class Index extends RootVue {
     public title = 'Sample';
+    protected imgs = {
+        'back': require('@/resources/img/background.jpg')
+    };
     public subtitle = 'Index';
 
     protected beforeCreate(): void {
