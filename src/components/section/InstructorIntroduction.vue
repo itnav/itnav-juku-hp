@@ -1,14 +1,15 @@
 <template lang='pug'>
 .vue-instructor-introduction
     h2.title.has-text-centered 〜講師紹介〜
-    .columns.is-multiline
-        .column.is-4(v-for='instructor in Instructors')
+    .instructors.columns.is-multiline.is-mobile
+        .column.is-4(v-for='instructor in instructors')
             .instructor(:style='{ "background-color": instructor.color }')
-                img(:src='instructor.img')
-                p.has-text-centered.is-size-3 {{ instructor.nickname }}
-                p {{ instructor.name }}
-                p {{ instructor.position }}
-                p {{ instructor.description }}
+                .instructor-body
+                    img.margin-bottom(:src='instructor.img')
+                    h3.subtitle.has-text-centered {{ instructor.nickname }}
+                    p {{ instructor.name }}
+                    p {{ instructor.position }}
+                    p {{ instructor.description }}
 </template>
 
 <script lang='ts'>
@@ -30,7 +31,7 @@ type Instructor = {
  */
 @Component
 export default class InstructorIntroduction extends Vue {
-    protected Instructors = [
+    protected instructors = [
         {
             img: require('@/resources/img/instructor/tama.png'),
             nickname:'たま',
@@ -72,14 +73,48 @@ export default class InstructorIntroduction extends Vue {
 
 .vue-instructor-introduction
     .instructor
-        height: 100%
-        padding: 1.25rem
-        max-width: 250px
-        margin: 0 auto
+        position: relative
+        width: 100%
         border-top-left-radius: 50% 26%
         border-top-right-radius: 50% 26%
         border-bottom-left-radius: 10% 5%
         border-bottom-right-radius: 10% 5%
-        p
-            color: #ffffff
+
+        &:before
+            content: ''
+            display: block
+            padding-top: 200%
+
+        .instructor-body
+            position: absolute
+            width: calc(100% - 16%)
+            top: 4%
+            left: 50%
+            transform: translate(-50%, 0)
+
+            img
+                display: block
+                margin-left: auto
+                margin-right: auto
+
+            h3
+                color: $white
+
+            p
+                color: $white
+                font-size: 0.95em
+
+    @media screen and (max-width: $tablet)
+        .instructors.columns
+            .column
+                width: calc(100% / 2)
+
+    @media screen and (max-width: 560px)
+        max-width: 300px
+        margin-left: auto
+        margin-right: auto
+
+        .instructors.columns
+            .column
+                width: 100%
 </style>

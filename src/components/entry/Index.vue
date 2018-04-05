@@ -10,7 +10,7 @@
     section.full
         .vue-slideshow: img(:src='imgs["photo1"]')
 
-    section.section
+    section.section.mid
         juku-introduction
     section.section
         instructor-introduction
@@ -108,6 +108,9 @@ export default class Index extends RootVue {
 
         &.full
             max-width: 100%
+
+        &.mid
+            max-width: 1100px
 
     footer.footer
         padding-bottom: 1rem
