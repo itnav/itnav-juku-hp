@@ -3,7 +3,7 @@
     h2.title.has-text-centered 〜 講師紹介 〜
     .staffs.columns.is-multiline.is-mobile
         .column.is-4(v-for='staff in staffs')
-            .staff(:style='{ "background-color": staff.color }')
+            a.staff(:style='{ "background-color": staff.color }' @click='speakComment(staff)')
                 .staff-body
                     img.margin-bottom(:src='staff.img')
                     h3.subtitle.has-text-centered {{ staff.nickname }}
@@ -14,6 +14,7 @@
 
 <script lang='ts'>
 import { Vue, Component } from 'vue-property-decorator';
+import { GlobalPositions } from 'buefy/types/helpers';
 import VueUtil from '@/scripts/util/VueUtil';
 
 type Staff = {
@@ -23,6 +24,7 @@ type Staff = {
     position: string;
     description: string;
     color: string;
+    comments: string[];
 }
 
 /**
@@ -38,7 +40,8 @@ export default class StaffIntro extends Vue {
             name:'千葉 沙織',
             position:'イトナブ石巻スタッフ',
             description:'ScratchやOzobotなどを使って小学生向けワークショップを行ったりしているScratchお姉さん',
-            color: '#ff42f8'
+            color: '#ff42f8',
+            comments: ['がんばるぞいっ！', 'オズボットだよ〜〜〜']
         },
         {
             img: require('@/resources/img/staff/uk.png'),
@@ -46,7 +49,8 @@ export default class StaffIntro extends Vue {
             name:'加藤 奨人',
             position:'イトナブ石巻スタッフ',
             description:'イベント企画・運営マネージャーワークショップの内容を考えたり営業なども行っている。Scratchお兄さん',
-            color: '#f84545'
+            color: '#f84545',
+            comments: ['スクラップお兄さんだーーー！', 'えいえいえーーーい']
         },
         {
             img: require('@/resources/img/staff/yottu.png'),
@@ -54,7 +58,8 @@ export default class StaffIntro extends Vue {
             name:'金光 宏',
             position:'イトナブ石巻スタッフ',
             description:'学生たちにプログラミングを教えたりWeb記事の作成、写真撮影などを行っている。',
-            color: '#4b42ff'
+            color: '#4b42ff',
+            comments: ['今日はスクラッチをやるよ！', 'ハンバーグたべたい']
         },
         {
             img: require('@/resources/img/staff/hinode.png'),
@@ -62,9 +67,25 @@ export default class StaffIntro extends Vue {
             name:'武山 将己',
             position:'イトナブ石巻スタッフ',
             description:'主に学生たちにプログラミングを教えるワークショップを開催したり、学校に出張授業に行っている。たまにイラストレーター',
-            color: '#ff873f'
+            color: '#ff873f',
+            comments: ['今日は絵を書きました', '自転車に乗って山を登ろう']
         }
     ] as Staff[];
+
+    protected random(num: number): number {
+        return Math.floor(Math.random() * num);
+    }
+
+    protected speakComment(staff: Staff): void {
+        const positions = ['is-top-right', 'is-top', 'is-top-left',
+            'is-bottom-right', 'is-bottom', 'is-bottom-left'] as GlobalPositions[];
+
+        this.$toast.open({
+            message: `${staff.nickname}: ${staff.comments[this.random(staff.comments.length)]}`,
+            position: positions[this.random(positions.length)],
+            duration: 1000
+        });
+    }
 }
 </script>
 
@@ -74,6 +95,7 @@ export default class StaffIntro extends Vue {
 .vue-staff-intro
     .staff
         position: relative
+        display: block
         width: 100%
         max-width: 250px
         margin-left: auto
