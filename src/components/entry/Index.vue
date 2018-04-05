@@ -10,17 +10,17 @@
     section.full
         .vue-slideshow: img(:src='imgs["photo1"]')
 
-    section
+    section.section
         h2.has-text-centered 〜遊びから学びへ〜
-    section
+    section.section
         h2.has-text-centered 〜講師紹介〜
-    section
+    section.section
         h2.has-text-centered 〜イトナブとは〜
-    section
+    section.section
         h2.has-text-centered 〜アクセス〜
-    section
+    section.section
         h2.has-text-centered 〜スケジュール〜
-    section
+    section.section
         h2.has-text-centered 〜お申し込み〜
 
     footer.footer
