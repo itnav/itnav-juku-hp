@@ -92,7 +92,6 @@ export default class Index extends RootVue {
 
 .vue-index
     width: 100%
-    height: 100%
     overflow-x: hidden
 
     h1
