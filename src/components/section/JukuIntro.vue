@@ -2,11 +2,11 @@
 .vue-juku-intro
     h2.title.has-text-centered 〜 遊びから学びへ 〜
 
-    .about.box.margin-bottom
-        p.has-text-centered.margin-bottom 月刊イトナブ塾は、イトナブ石巻が主催している小学生向けプログラミング講習会です
-        p.has-text-centered.margin-bottom プログラミングと聞くと難しいイメージを持たれますが、
-        p.has-text-centered.margin-bottom ScratchやOzobotなど直感的に学べるツールを利用して初心者でもわかりやすい内容になっています
-        p.has-text-centered.margin-bottom 夢中になって遊んでいると、いつの間にか学びになっている
+    .about.box
+        p.has-text-centered 月刊イトナブ塾は、イトナブ石巻が主催している小学生向けプログラミング講習会です
+        p.has-text-centered プログラミングと聞くと難しいイメージを持たれますが、
+        p.has-text-centered ScratchやOzobotなど直感的に学べるツールを利用して初心者でもわかりやすい内容になっています
+        p.has-text-centered 夢中になって遊んでいると、いつの間にか学びになっている
         p.has-text-centered そんなワークショップをイトナブ塾は目指しています
 
     .intros.columns.is-multiline.is-mobile
@@ -54,6 +54,12 @@ export default class JukuIntro extends Vue {
 @import 'variable'
 
 .vue-juku-intro
+    .about
+        margin-bottom: 3rem
+
+        p:not(:last-child)
+            margin-bottom: 0.75rem
+
     .intros.columns
         justify-content: center
         margin-left: auto
