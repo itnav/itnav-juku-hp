@@ -9,18 +9,19 @@
 
     section.full
         .vue-slideshow: img(:src='imgs["photo1"]')
-    section.about-juku.has-text-centered
-        h2 〜遊びから学びへ〜
-    section.about-juku.has-text-centered
-        h2 〜講師紹介〜
-    section.about-juku.has-text-centered
-        h2 〜イトナブとは〜
-    section.about-juku.has-text-centered
-        h2 〜アクセス〜
-    section.about-juku.has-text-centered
-        h2 〜スケジュール〜
-    section.about-juku.has-text-centered
-        h2 〜お申し込み〜
+
+    section
+        h2.has-text-centered 〜遊びから学びへ〜
+    section
+        h2.has-text-centered 〜講師紹介〜
+    section
+        h2.has-text-centered 〜イトナブとは〜
+    section
+        h2.has-text-centered 〜アクセス〜
+    section
+        h2.has-text-centered 〜スケジュール〜
+    section
+        h2.has-text-centered 〜お申し込み〜
 
     footer.footer
         .content.columns.has-text-centered.is-multiline
@@ -31,7 +32,6 @@
                 .column.is-half: p Tel : 〒986-0822 宮城県石巻市中央2-10-21 サトミビル1F
                 .column.is-half: p Mail : info@itnav.jp
             .column.is-12: p copyrights
-
 </template>
 
 <script lang='ts'>
