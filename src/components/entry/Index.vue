@@ -55,10 +55,10 @@ export default class Index extends RootVue {
     public title = '月刊イトナブ塾';
     public subtitle = 'HP';
     protected imgs = {
-        'back': require('@/resources/img/background.jpg'),
-        'logo': require('@/resources/img/logo.png'),
-        'photo1': require('@/resources/img/photo1.jpg'),
-        'itnav': require('@/resources/img/itnav-logo.png')
+        'back': require('@/resources/img/illust/background.jpg'),
+        'logo': require('@/resources/img/logo/logo.png'),
+        'itnav': require('@/resources/img/logo/itnav-logo.png'),
+        'photo1': require('@/resources/img/photo/photo1.jpg')
     };
 
     protected menus = [
