@@ -3,8 +3,8 @@ header.vue-common-navbar.navbar(:class='{"is-fixed-top": isFixed}'
         role='navigation' aria-label='main navigation')
     .container
         .navbar-brand
-            a.navbar-item(v-if='brandImg != null'): img(:src='brandImg')
-            a.navbar-item(v-if='brand != null') {{ brand }}
+            a.navbar-item(v-if='brandImg != ""'): img(:src='brandImg')
+            a.navbar-item(v-if='brand != ""') {{ brand }}
 
             .navbar-burger(:class='{"is-active": showNavMenu}'
                     @click='invertShowNavMenu')
