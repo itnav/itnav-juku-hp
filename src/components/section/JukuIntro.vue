@@ -2,7 +2,7 @@
 .vue-juku-intro
     h2.title.has-text-centered 〜 遊びから学びへ 〜
 
-    .about.margin-bottom
+    .about.box.margin-bottom
         p.has-text-centered.margin-bottom 月刊イトナブ塾は、イトナブ石巻が主催している小学生向けプログラミング講習会です
         p.has-text-centered.margin-bottom プログラミングと聞くと難しいイメージを持たれますが、
         p.has-text-centered.margin-bottom ScratchやOzobotなど直感的に学べるツールを利用して初心者でもわかりやすい内容になっています
