@@ -13,7 +13,7 @@
     section.section
         h2.has-text-centered 〜遊びから学びへ〜
     section.section
-        h2.has-text-centered 〜講師紹介〜
+        instructor-introduction
     section.section
         h2.has-text-centered 〜イトナブとは〜
     section.section
@@ -40,6 +40,7 @@ import VueUtil from '@/scripts/util/VueUtil';
 import RootVue from '@/components/base/RootVue';
 import CommonNavbar from '@/components/common/CommonNavbar.vue';
 import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
+import InstructorIntroduction from '@/components/section/InstructorIntroduction.vue';
 
 import Buefy from 'buefy';
 
@@ -82,7 +83,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar]);
+        VueUtil.registerComponents([CommonNavbar, InstructorIntroduction]);
     }
 }
 </script>
