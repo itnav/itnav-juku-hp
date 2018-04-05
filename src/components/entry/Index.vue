@@ -93,11 +93,13 @@ export default class Index extends RootVue {
 .vue-index
     width: 100%
     overflow-x: hidden
+    animation: bgscroll 30s linear infinite
 
     h1
         & > img.logo
             width: 100%
             height: auto
+            animation: bounce 1s
 
     section
         max-width: 800px
@@ -112,4 +114,18 @@ export default class Index extends RootVue {
 
     footer.footer
         padding-bottom: 1rem
+
+    @keyframes bgscroll
+        0%
+            background-position: 0 0
+        100%
+            background-position: 1920px 1083px
+
+    @keyframes bounce
+        0%
+            transform: scale(0)
+        50%
+            transform: scale(1.3)
+        100%
+            transform: scale(1)
 </style>
