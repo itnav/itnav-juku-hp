@@ -1,6 +1,6 @@
 <template lang='pug'>
 .vue-juku-intro
-    h2.title.has-text-centered 〜遊びから学びへ〜
+    h2.title.has-text-centered 〜 遊びから学びへ 〜
 
     .about.margin-bottom
         p.has-text-centered.margin-bottom 月刊イトナブ塾は、イトナブ石巻が主催している小学生向けプログラミング講習会です

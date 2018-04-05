@@ -13,13 +13,13 @@
         section.section.mid: juku-intro
         section.section: staff-intro
         section.section
-            h2.has-text-centered 〜イトナブとは〜
+            h2.has-text-centered 〜 イトナブとは 〜
         section.section
-            h2.has-text-centered 〜アクセス〜
+            h2.has-text-centered 〜 アクセス 〜
         section.section
-            h2.has-text-centered 〜スケジュール〜
+            h2.has-text-centered 〜 スケジュール 〜
         section.section
-            h2.has-text-centered 〜お申し込み〜
+            h2.has-text-centered 〜 お申し込み 〜
 
     footer.footer
         .content.columns.has-text-centered.is-multiline

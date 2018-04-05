@@ -1,6 +1,6 @@
 <template lang='pug'>
 .vue-staff-intro
-    h2.title.has-text-centered 〜講師紹介〜
+    h2.title.has-text-centered 〜 講師紹介 〜
     .staffs.columns.is-multiline.is-mobile
         .column.is-4(v-for='staff in staffs')
             .staff(:style='{ "background-color": staff.color }')
