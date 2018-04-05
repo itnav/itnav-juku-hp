@@ -7,21 +7,19 @@
         .hero-body.has-text-centered
             h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
-    section.full
-        .vue-slideshow: img(:src='imgs["photo1"]')
+    .main
+        section.full: .vue-slideshow: img(:src='imgs["photo1"]')
 
-    section.section.mid
-        juku-intro
-    section.section
-        staff-intro
-    section.section
-        h2.has-text-centered 〜イトナブとは〜
-    section.section
-        h2.has-text-centered 〜アクセス〜
-    section.section
-        h2.has-text-centered 〜スケジュール〜
-    section.section
-        h2.has-text-centered 〜お申し込み〜
+        section.section.mid: juku-intro
+        section.section: staff-intro
+        section.section
+            h2.has-text-centered 〜イトナブとは〜
+        section.section
+            h2.has-text-centered 〜アクセス〜
+        section.section
+            h2.has-text-centered 〜スケジュール〜
+        section.section
+            h2.has-text-centered 〜お申し込み〜
 
     footer.footer
         .content.columns.has-text-centered.is-multiline
