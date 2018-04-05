@@ -1,22 +1,22 @@
 <template lang='pug'>
-.vue-instructor-introduction
+.vue-staff-intro
     h2.title.has-text-centered 〜講師紹介〜
-    .instructors.columns.is-multiline.is-mobile
-        .column.is-4(v-for='instructor in instructors')
-            .instructor(:style='{ "background-color": instructor.color }')
-                .instructor-body
-                    img.margin-bottom(:src='instructor.img')
-                    h3.subtitle.has-text-centered {{ instructor.nickname }}
-                    p {{ instructor.name }}
-                    p {{ instructor.position }}
-                    p {{ instructor.description }}
+    .staffs.columns.is-multiline.is-mobile
+        .column.is-4(v-for='staff in staffs')
+            .staff(:style='{ "background-color": staff.color }')
+                .staff-body
+                    img.margin-bottom(:src='staff.img')
+                    h3.subtitle.has-text-centered {{ staff.nickname }}
+                    p {{ staff.name }}
+                    p {{ staff.position }}
+                    p {{ staff.description }}
 </template>
 
 <script lang='ts'>
 import { Vue, Component } from 'vue-property-decorator';
 import VueUtil from '@/scripts/util/VueUtil';
 
-type Instructor = {
+type Staff = {
     img: Imgs;
     nickname: string;
     name: string;
@@ -30,10 +30,10 @@ type Instructor = {
  * TODO: rename to StafIntro
  */
 @Component
-export default class InstructorIntroduction extends Vue {
-    protected instructors = [
+export default class StaffIntro extends Vue {
+    protected staffs = [
         {
-            img: require('@/resources/img/instructor/tama.png'),
+            img: require('@/resources/img/staff/tama.png'),
             nickname:'たま',
             name:'千葉 沙織',
             position:'イトナブ石巻スタッフ',
@@ -41,7 +41,7 @@ export default class InstructorIntroduction extends Vue {
             color: '#ff42f8'
         },
         {
-            img: require('@/resources/img/instructor/uk.png'),
+            img: require('@/resources/img/staff/uk.png'),
             nickname:'UK',
             name:'加藤 奨人',
             position:'イトナブ石巻スタッフ',
@@ -49,7 +49,7 @@ export default class InstructorIntroduction extends Vue {
             color: '#f84545'
         },
         {
-            img: require('@/resources/img/instructor/yottu.png'),
+            img: require('@/resources/img/staff/yottu.png'),
             nickname:'よっつ',
             name:'金光 宏',
             position:'イトナブ石巻スタッフ',
@@ -57,22 +57,22 @@ export default class InstructorIntroduction extends Vue {
             color: '#4b42ff'
         },
         {
-            img: require('@/resources/img/instructor/hinode.png'),
+            img: require('@/resources/img/staff/hinode.png'),
             nickname:'日の出',
             name:'武山 将己',
             position:'イトナブ石巻スタッフ',
             description:'主に学生たちにプログラミングを教えるワークショップを開催したり、学校に出張授業に行っている。たまにイラストレーター',
             color: '#ff873f'
         }
-    ] as Instructor[];
+    ] as Staff[];
 }
 </script>
 
 <style lang='sass' scoped>
 @import 'variable'
 
-.vue-instructor-introduction
-    .instructor
+.vue-staff-intro
+    .staff
         position: relative
         width: 100%
         border-top-left-radius: 50% 26%
@@ -85,7 +85,7 @@ export default class InstructorIntroduction extends Vue {
             display: block
             padding-top: 200%
 
-        .instructor-body
+        .staff-body
             position: absolute
             width: calc(100% - 16%)
             top: 4%
@@ -105,7 +105,7 @@ export default class InstructorIntroduction extends Vue {
                 font-size: 0.95em
 
     @media screen and (max-width: $tablet)
-        .instructors.columns
+        .staffs.columns
             .column
                 width: calc(100% / 2)
 
@@ -114,7 +114,7 @@ export default class InstructorIntroduction extends Vue {
         margin-left: auto
         margin-right: auto
 
-        .instructors.columns
+        .staffs.columns
             .column
                 width: 100%
 </style>
