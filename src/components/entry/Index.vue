@@ -11,8 +11,7 @@
         .vue-slideshow: img(:src='imgs["photo1"]')
 
     section.section
-        h2.has-text-centered 〜遊びから学びへ〜
-
+        juku-introduction
     section.section
         instructor-introduction
     section.section
@@ -41,6 +40,7 @@ import VueUtil from '@/scripts/util/VueUtil';
 import RootVue from '@/components/base/RootVue';
 import CommonNavbar from '@/components/common/CommonNavbar.vue';
 import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
+import JukuIntroduction from '@/components/section/JukuIntroduction.vue'
 import InstructorIntroduction from '@/components/section/InstructorIntroduction.vue';
 
 import Buefy from 'buefy';
@@ -84,7 +84,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, InstructorIntroduction]);
+        VueUtil.registerComponents([CommonNavbar, JukuIntroduction, InstructorIntroduction]);
     }
 }
 </script>

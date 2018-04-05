@@ -29,6 +29,7 @@ type IntroductionText = {
 
 /**
  * Vue Component
+ * TODO: rename: JukuIntro
  */
 @Component
 export default class JukuIntroduction extends Vue {
