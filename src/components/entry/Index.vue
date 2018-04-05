@@ -5,11 +5,32 @@
 
     section.hero
         .hero-body.has-text-centered
-            h1: img.logo(:src='imgs["logo"]')
+            h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
     section.full
         .vue-slideshow: img(:src='imgs["photo1"]')
+    section.about-juku.has-text-centered
+        h2 〜遊びから学びへ〜
+    section.about-juku.has-text-centered
+        h2 〜講師紹介〜
+    section.about-juku.has-text-centered
+        h2 〜イトナブとは〜
+    section.about-juku.has-text-centered
+        h2 〜アクセス〜
+    section.about-juku.has-text-centered
+        h2 〜スケジュール〜
+    section.about-juku.has-text-centered
+        h2 〜お申し込み〜
 
+    footer.footer
+        .content.columns.has-text-centered.is-multiline
+            .column.is-4: img(:src='imgs["itnav"]')
+            .column.is-8.columns.is-multiline
+                .column.is-half: p 一般社団法人イトナブ石巻
+                .column.is-half: p Tel : 0225-90-4282
+                .column.is-half: p Tel : 〒986-0822 宮城県石巻市中央2-10-21 サトミビル1F
+                .column.is-half: p Mail : info@itnav.jp
+            .column.is-12: p copyrights
 
 </template>
 
@@ -29,12 +50,13 @@ Vue.use(Buefy);
  */
 @Component
 export default class Index extends RootVue {
-    public title = 'イトナブ塾';
+    public title = '月刊イトナブ塾';
     public subtitle = 'HP';
     protected imgs = {
         'back': require('@/resources/img/background.jpg'),
         'logo': require('@/resources/img/logo.png'),
-        'photo1': require('@/resources/img/photo1.jpg')
+        'photo1': require('@/resources/img/photo1.jpg'),
+        'itnav': require('@/resources/img/itnav-logo.png')
     };
 
     protected menus = [
@@ -73,6 +95,11 @@ export default class Index extends RootVue {
     height: 100%
     overflow-x: hidden
 
+    h1
+        & > img.logo
+            width: 100%
+            height: auto
+
     section
         max-width: 800px
         margin-left: auto
@@ -80,8 +107,4 @@ export default class Index extends RootVue {
 
         &.full
             max-width: 100%
-
-        img.logo
-            width: 100%
-            height: auto
 </style>
