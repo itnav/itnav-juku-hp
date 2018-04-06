@@ -15,8 +15,7 @@
         section.full: itnav-intro
         section.section
             h2.has-text-centered 〜 アクセス 〜
-        section.section
-            h2.has-text-centered 〜 スケジュール 〜
+        section.section: itnav-schedule
         section.section
             h2.has-text-centered 〜 お申し込み 〜
 
@@ -40,6 +39,7 @@ import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
 import JukuIntro from '@/components/section/JukuIntro.vue'
 import StaffIntro from '@/components/section/StaffIntro.vue';
 import ItnavIntro from '@/components/section/ItnavIntro.vue';
+import ItnavSchedule from '@/components/section/ItnavSchedule.vue';
 
 import Buefy from 'buefy';
 
@@ -82,7 +82,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavIntro]);
+        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavIntro, ItnavSchedule]);
     }
 }
 </script>
