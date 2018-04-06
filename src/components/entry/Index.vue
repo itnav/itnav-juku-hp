@@ -40,7 +40,6 @@ import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
 import JukuIntro from '@/components/section/JukuIntro.vue'
 import StaffIntro from '@/components/section/StaffIntro.vue';
 import ItnavSchedule from '@/components/section/ItnavSchedule.vue';
-import GoogleCalendar from '@/components/part/GoogleCalendar.vue';
 
 import Buefy from 'buefy';
 
@@ -83,7 +82,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavSchedule, GoogleCalendar]);
+        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavSchedule]);
     }
 }
 </script>
