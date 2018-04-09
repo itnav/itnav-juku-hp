@@ -50,6 +50,6 @@ export default class ItnavAccess extends Vue {
     .infos > h3
         margin: 1rem 0 4rem 0
 
-    .access > p, .access > .icon-text
+    .access > p, .access > .icon-text:not(:last-child)
         margin-bottom: 2rem
 </style>
