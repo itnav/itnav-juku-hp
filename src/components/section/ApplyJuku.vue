@@ -2,8 +2,8 @@
 .vue-apply-juku
     h2.title.has-text-centered 〜 お申し込み 〜
 
-    .columns.is-multiline
-        .entry-guide.card.column.is-half
+    .columns.is-multiline.box
+        .entry-guide.column.is-half
             p 月刊イトナブ塾は毎月第四日曜に開催しております。
             p （都合により一部変更する場合があります）
             p 場所：イトナブ石巻
@@ -23,6 +23,14 @@
             a(href='http://technomaki.jp/')
                 img(:src='imgs["technomaki"]')
 
+        .line.column.is-half.columns.has-text-centered.is-size-4
+            .column
+                img(:src='imgs["line-logo"]')
+                p 始めました！
+                p 参加申し込みもできます！
+            .column
+                img(:src='imgs["line-qr"]')
+                p @qcc2983u
 </template>
 
 <script lang='ts'>
@@ -36,7 +44,9 @@ import VueUtil from '@/scripts/util/VueUtil';
 export default class ApplyJuku extends Vue {
     protected imgs = {
         'juku-scene': require('@/resources/img/photo/juku-scene.jpg'),
-        technomaki: require('@/resources/img/logo/technomaki.png')
+        'technomaki': require('@/resources/img/logo/technomaki.png'),
+        'line-logo': require('@/resources/img/logo/line.png'),
+        'line-qr': require('@/resources/img/illust/qr.jpg')
     }
 }
 </script>
@@ -49,7 +59,19 @@ export default class ApplyJuku extends Vue {
         p:not(:last-child)
             margin-bottom: .75rem
 
-    .technomaki > a
+    .technomaki
         img
-            max-width: 300px
+            padding-top: 2rem
+            max-width: 60%
+        p
+            padding-bottom: 0.4rem
+
+    .line
+        margin: 1rem 0
+        background-color: #2cbf13
+        color: #ffffff
+        border-radius: 30px
+
+        img
+            max-width: 60%
 </style>
