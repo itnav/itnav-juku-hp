@@ -11,7 +11,7 @@
             p 持ち物：特になし
             p （講習で使うパソコンなどはこちらで準備してあります）
             p 参加申し込みは以下の申し込みボタンよりおこなってください。
-            a.apply.button.is-primary
+            a.apply.button.is-primary.is-medium
                 b-icon(icon='open-in-new')
                 span.text 参加申込み
         .column.is-half
@@ -23,7 +23,7 @@
             a(href='http://technomaki.jp/')
                 img(:src='imgs["technomaki"]')
 
-        .line.column.is-half.columns.has-text-centered.is-size-4
+        .line.column.is-half.columns.has-text-centered.is-size-5
             .column
                 img(:src='imgs["line-logo"]')
                 p 始めました！
@@ -67,11 +67,15 @@ export default class ApplyJuku extends Vue {
             padding-bottom: 0.4rem
 
     .line
-        margin: 1rem 0
+        max-width: 400px
+        margin: 1rem auto
         background-color: #2cbf13
         color: #ffffff
         border-radius: 30px
 
         img
             max-width: 60%
+
+        .column > p:not(:last-child), .column > img
+            margin-bottom: .75rem
 </style>
