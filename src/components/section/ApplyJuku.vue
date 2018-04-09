@@ -48,11 +48,4 @@ export default class ApplyJuku extends Vue {
     .entry-guide
         p:not(:last-child)
             margin-bottom: .75rem
-
-    .technomaki-page
-        margin-left: auto
-        margin-right: auto
-
-        img
-            max-width: 300px
 </style>
