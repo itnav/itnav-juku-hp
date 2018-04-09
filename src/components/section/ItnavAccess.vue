@@ -3,10 +3,9 @@
     h2.title.has-text-centered 〜 アクセス 〜
 
     .columns.box
-        .infos.column.is-5.columns.is-multiline
-            .company-name.column.is-12
-                h3.subtitle 一般社団法人イトナブ石巻
-            .access.column.is-12
+        .infos.column.is-5
+            h3.subtitle 一般社団法人イトナブ石巻
+            .access
                 p 〒986-0822
                 p 宮城県石巻市中央2-10-21サトミビル1F
                 p （石巻駅から徒歩10分）
@@ -48,11 +47,9 @@ export default class ItnavAccess extends Vue {
         width: 100%
         height: 450px
 
-    .access
-        display: flex
-        flex-direction: column
-        justify-content: space-between
+    .infos > h3
+        margin: 1rem 0 4rem 0
 
-        p, .icon-text
-            margin-bottom: 1.5rem
+    .access > p, .access > .icon-text
+        margin-bottom: 2rem
 </style>
