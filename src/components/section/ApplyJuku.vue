@@ -3,7 +3,7 @@
     h2.title.has-text-centered 〜 お申し込み 〜
 
     .columns.is-multiline
-        .card.entry-guide.column.is-half
+        .entry-guide.card.column.is-half
             p 月刊イトナブ塾は毎月第四日曜に開催しております。
             p （都合により一部変更する場合があります）
             p 場所：イトナブ石巻
@@ -17,10 +17,10 @@
         .column.is-half
             img(:src='imgs["juku-scene"]')
 
-        .column.is-half
-            p.has-text-centered 講習風景や次回予告などは
-            p.has-text-centered こちらのブログに掲載されます！
-            a.technomaki-page(href='http://technomaki.jp/')
+        .technomaki.column.is-half.has-text-centered
+            p 講習風景や次回予告などは
+            p こちらのブログに掲載されます！
+            a(href='http://technomaki.jp/')
                 img(:src='imgs["technomaki"]')
 
 </template>
@@ -48,4 +48,8 @@ export default class ApplyJuku extends Vue {
     .entry-guide
         p:not(:last-child)
             margin-bottom: .75rem
+
+    .technomaki > a
+        img
+            max-width: 300px
 </style>
