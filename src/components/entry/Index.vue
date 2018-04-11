@@ -1,7 +1,8 @@
 <template lang='pug'>
 .vue-index(:style='{"background-image": `url("${imgs[\"back\"]}")`}')
     .reactive-title {{ reactiveTitle() }}
-    common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]' :menus='menus')
+    common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]'
+        :brand-click='brandClick' :menus='menus')
 
     section.hero
         .hero-body.has-text-centered
@@ -80,6 +81,10 @@ export default class Index extends RootVue {
             ScrollUtil.animate((this.$refs['apply-juku'] as HTMLElement).offsetTop);
         } }
     ] as NavbarMenuItem[];
+
+    protected brandClick = () => {
+        ScrollUtil.animate(0);
+    }
 
     protected beforeCreate(): void {
         // Inner Vue 登録
