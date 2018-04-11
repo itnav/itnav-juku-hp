@@ -1,21 +1,22 @@
 <template lang='pug'>
 .vue-index(:style='{"background-image": `url("${imgs[\"back\"]}")`}')
     .reactive-title {{ reactiveTitle() }}
-    common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]' :menus='menus')
+    common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]'
+        :brand-click='brandClick' :menus='menus')
 
     section.hero
         .hero-body.has-text-centered
             h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
     .main
-        section.full: .vue-slideshow: img(:src='imgs["photo1"]')
+        section.section.full: .vue-slideshow: img(:src='imgs["photo1"]')
 
-        section.section.mid: juku-intro
-        section.section.mid: staff-intro
-        section.full: itnav-intro
-        section.section.mid: itnav-access
-        section.section: itnav-schedule
-        section.section
+        section.section.mid(ref='juku-intro'): juku-intro
+        section.section.mid(ref='staff-intro'): staff-intro
+        section.section.full(ref='itnav-intro'): itnav-intro
+        section.section.mid(ref='itnav-access'): itnav-access
+        section.section(ref='itnav-schedule'): itnav-schedule
+        section.section(ref='apply-juku')
             h2.has-text-centered 〜 お申し込み 〜
 
     footer.footer
@@ -32,6 +33,7 @@
 <script lang='ts'>
 import { Vue, Component } from 'vue-property-decorator';
 import VueUtil from '@/scripts/util/VueUtil';
+import ScrollUtil from '@/scripts/util/ScrollUtil';
 import RootVue from '@/components/base/RootVue';
 import CommonNavbar from '@/components/common/CommonNavbar.vue';
 import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
@@ -61,24 +63,28 @@ export default class Index extends RootVue {
 
     protected menus = [
         { pack:'fa', icon: 'question', text: 'イトナブ塾とは', onClick: () => {
-            this.$snackbar.open('home');
+            ScrollUtil.animate((this.$refs['juku-intro'] as HTMLElement).offsetTop);
         } },
         { pack:'fa', icon: 'user', text: '講師', onClick: () => {
-            this.$snackbar.open('home');
+            ScrollUtil.animate((this.$refs['staff-intro'] as HTMLElement).offsetTop);
         } },
         { pack:'fa', icon: 'id-card', text: 'イトナブとは', onClick: () => {
-            this.$snackbar.open('home');
+            ScrollUtil.animate((this.$refs['itnav-intro'] as HTMLElement).offsetTop);
         } },
         { pack:'fa', icon: 'map-signs', text: 'アクセス', onClick: () => {
-            this.$snackbar.open('home');
+            ScrollUtil.animate((this.$refs['itnav-access'] as HTMLElement).offsetTop);
         } },
         { pack:'fa', icon: 'calendar', text: 'スケジュール', onClick: () => {
-            this.$snackbar.open('home');
+            ScrollUtil.animate((this.$refs['itnav-schedule'] as HTMLElement).offsetTop);
         } },
         { pack:'fa', icon: 'paper-plane', text: 'お申し込み', onClick: () => {
-            this.$snackbar.open('home');
+            ScrollUtil.animate((this.$refs['apply-juku'] as HTMLElement).offsetTop);
         } }
     ] as NavbarMenuItem[];
+
+    protected brandClick = () => {
+        ScrollUtil.animate(0);
+    }
 
     protected beforeCreate(): void {
         // Inner Vue 登録
@@ -108,6 +114,8 @@ export default class Index extends RootVue {
 
         &.full
             max-width: 100%
+            padding-left: 0
+            padding-right: 0
 
         &.mid
             max-width: 1100px
