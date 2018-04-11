@@ -50,7 +50,7 @@ export default class StaffIntro extends Vue {
             position:'イトナブ石巻スタッフ',
             description:'イベント企画・運営マネージャーワークショップの内容を考えたり営業なども行っている。Scratchお兄さん',
             color: '#f84545',
-            comments: ['スクラップお兄さんだーーー！', 'えいえいえーーーい']
+            comments: ['プログラミングは魔法の呪文だよ!', '好きな食べ物はカレーライス', 'スクラップお兄さんは知ってるかい？', '一緒にプログラミングを学ぼう〜', 'UK(ユーケー)って読んでね']
         },
         {
             img: require('@/resources/img/staff/yottu.png'),
