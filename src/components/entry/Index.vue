@@ -20,7 +20,7 @@
             h2.has-text-centered 〜 お申し込み 〜
 
     footer.footer
-        .content.columns.has-text-centered.is-multiline
+        .content.columns.has-text-centered.is-multiline.has-text-white
             .column.is-4: img(:src='imgs["itnav"]')
             .column.is-8.columns.is-multiline
                 .column.is-half: p 一般社団法人イトナブ石巻
@@ -30,7 +30,7 @@
                 .column.is-half: p 〒986-0822 宮城県石巻市中央2-10-21 サトミビル1F
                 .column.is-half.icon-text
                     b-icon(icon='email')
-                    p Mail : info@itnav.jp
+                    p info@itnav.jp
             .column.is-12.icon-text.copyright
                 b-icon(icon='copyright')
                 p 2018 itnavJuku
@@ -129,7 +129,7 @@ export default class Index extends RootVue {
     footer.footer
         padding-bottom: 1rem
 
-        .copyright
+        .icon-text
             display: flex
             justify-content: center
 
