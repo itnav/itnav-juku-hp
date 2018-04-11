@@ -11,9 +11,10 @@
             p 持ち物：特になし
             p （講習で使うパソコンなどはこちらで準備してあります）
             p 参加申し込みは以下の申し込みボタンよりおこなってください。
-            a.apply.button.is-primary.is-medium.is-centered(href='https://docs.google.com/forms/d/1i76rydaJnVF1IkilRCyV4vhLXU1VISUZgQpEfLpYsDM/prefill')
-                b-icon(icon='open-in-new')
-                span.text 参加申込み
+            .apply-button.has-text-centered
+                a.button.is-primary.is-medium(href='https://docs.google.com/forms/d/1i76rydaJnVF1IkilRCyV4vhLXU1VISUZgQpEfLpYsDM/prefill')
+                    b-icon(icon='open-in-new')
+                    span.text 参加申込み
         .juku-scene.column.is-half
             img(:src='imgs["juku-scene"]')
 
