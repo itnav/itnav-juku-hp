@@ -22,20 +22,18 @@ export default class ScrollUtil {
      * @param element
      * @param y
      */
-    public static animate(y: number,
+    public static animate(y: number, duration: number = 750,
             element: Element | null = document.scrollingElement) {
         if (element == null) {
             return;
         }
 
-        const duration = 1000;
         const tick = 15;
-
         const initialHeight: number = element.scrollTop;
         const scrollHeight: number = y - element.scrollTop
             - (document.documentElement.offsetHeight
             - document.body.offsetHeight);
-        const scrollStep: number = Math.PI / (scrollHeight / tick);
+        const scrollStep: number = Math.PI / (duration / tick);
         const cosParam: number = scrollHeight / 2;
 
         let scrollCount: number = 0;
