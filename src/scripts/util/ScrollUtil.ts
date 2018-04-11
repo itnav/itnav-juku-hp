@@ -3,11 +3,18 @@ export default class ScrollUtil {
 
     /**
      * jump
-     * @param element
+     * @param elem
      * @param y
      */
-    public static jump(element: HTMLElement, y: number) {
-        element.scrollTo(0, y);
+    public static jump(y: number,
+            element: Element | null = document.scrollingElement) {
+        if (element == null) {
+            return;
+        }
+
+        element.scrollTo(0, y
+            - (document.documentElement.offsetHeight
+            - document.body.offsetHeight));
     }
 
     /**
@@ -15,7 +22,12 @@ export default class ScrollUtil {
      * @param element
      * @param y
      */
-    public static animate(element: HTMLElement, y: number) {
+    public static animate(y: number,
+            element: Element | null = document.scrollingElement) {
+        if (element == null) {
+            return;
+        }
+
         const tick = 15;
 
         const initialHeight: number = element.scrollTop;
@@ -29,7 +41,7 @@ export default class ScrollUtil {
         const scrollInterval = setInterval(() => {
             if (Math.abs(scrollCount * scrollStep) < Math.PI) {
                 scrollY = cosParam + cosParam * (Math.cos(++scrollCount * scrollStep) * -1);
-                element.scrollTo(0, initialHeight + scrollY);
+                ScrollUtil.jump(initialHeight + scrollY, element);
             } else {
                 clearInterval(scrollInterval);
             };
