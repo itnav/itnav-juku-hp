@@ -28,10 +28,13 @@ export default class ScrollUtil {
             return;
         }
 
+        const duration = 1000;
         const tick = 15;
 
         const initialHeight: number = element.scrollTop;
-        const scrollHeight: number = y - element.scrollTop;
+        const scrollHeight: number = y - element.scrollTop
+            - (document.documentElement.offsetHeight
+            - document.body.offsetHeight);
         const scrollStep: number = Math.PI / (scrollHeight / tick);
         const cosParam: number = scrollHeight / 2;
 
@@ -41,7 +44,7 @@ export default class ScrollUtil {
         const scrollInterval = setInterval(() => {
             if (Math.abs(scrollCount * scrollStep) < Math.PI) {
                 scrollY = cosParam + cosParam * (Math.cos(++scrollCount * scrollStep) * -1);
-                ScrollUtil.jump(initialHeight + scrollY, element);
+                element.scrollTo(0, initialHeight + scrollY);
             } else {
                 clearInterval(scrollInterval);
             };
