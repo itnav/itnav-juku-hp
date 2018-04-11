@@ -9,11 +9,11 @@
             h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
     .main
-        section.full: .vue-slideshow: img(:src='imgs["photo1"]')
+        section.section.full: .vue-slideshow: img(:src='imgs["photo1"]')
 
         section.section.mid(ref='juku-intro'): juku-intro
         section.section.mid(ref='staff-intro'): staff-intro
-        section.full(ref='itnav-intro'): itnav-intro
+        section.section.full(ref='itnav-intro'): itnav-intro
         section.section.mid(ref='itnav-access'): itnav-access
         section.section(ref='itnav-schedule'): itnav-schedule
         section.section(ref='apply-juku')
@@ -114,6 +114,8 @@ export default class Index extends RootVue {
 
         &.full
             max-width: 100%
+            padding-left: 0
+            padding-right: 0
 
         &.mid
             max-width: 1100px
