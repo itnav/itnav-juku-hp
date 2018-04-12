@@ -9,13 +9,13 @@
             h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
     .main
-        section.section.full: .vue-slideshow: img(:src='imgs["photo1"]')
- 
+        section.section.full: .vue-slideshow: img.full-image(:src='imgs["photo1"]')
+
         section.section.mid(ref='juku-intro'): juku-intro
         section.section.mid(ref='staff-intro'): staff-intro
         section.section.full(ref='itnav-intro'): itnav-intro
         section.section.mid(ref='itnav-access'): itnav-access
-        section.section(ref='itnav-schedule'): itnav-schedule
+        section.section.mid(ref='itnav-schedule'): itnav-schedule
         section.section.mid(ref='apply-juku'): apply-juku
 
     footer.footer
@@ -108,6 +108,9 @@ export default class Index extends RootVue {
     width: 100%
     overflow-x: hidden
     animation: bgscroll 30s linear infinite
+
+    .full-image
+        width: 100%
 
     h1
         & > img.logo

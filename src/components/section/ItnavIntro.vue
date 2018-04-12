@@ -1,7 +1,7 @@
 <template lang='pug'>
 .vue-itnav-intro
     h2.title.has-text-centered 〜 イトナブとは 〜
-    img.margin-bottom(:src='imgs["hackathon"]')
+    img.margin-bottom.full-image(:src='imgs["hackathon"]')
 
     .about.box.has-text-centered
         p イトナブとは「IT」×「遊ぶ」×「学ぶ」×「営む」×「イノベーション」の造語です。
@@ -31,6 +31,9 @@ export default class ItnavIntro extends Vue {
 @import 'variable'
 
 .vue-itnav-intro
+    .full-image
+        width: 100%
+
     .about
         margin-left: auto
         margin-right: auto
