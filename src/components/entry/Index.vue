@@ -10,14 +10,13 @@
 
     .main
         section.section.full: .vue-slideshow: img(:src='imgs["photo1"]')
-
+ 
         section.section.mid(ref='juku-intro'): juku-intro
         section.section.mid(ref='staff-intro'): staff-intro
         section.section.full(ref='itnav-intro'): itnav-intro
         section.section.mid(ref='itnav-access'): itnav-access
         section.section(ref='itnav-schedule'): itnav-schedule
-        section.section(ref='apply-juku')
-            h2.has-text-centered 〜 お申し込み 〜
+        section.section.mid(ref='apply-juku'): apply-juku
 
     footer.footer
         .content.columns.has-text-centered.is-multiline.has-text-white
@@ -50,6 +49,7 @@ import StaffIntro from '@/components/section/StaffIntro.vue';
 import ItnavIntro from '@/components/section/ItnavIntro.vue';
 import ItnavAccess from '@/components/section/ItnavAccess.vue';
 import ItnavSchedule from '@/components/section/ItnavSchedule.vue';
+import ApplyJuku from '@/components/section/ApplyJuku.vue';
 
 import Buefy from 'buefy';
 
@@ -96,7 +96,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavIntro, ItnavAccess, ItnavSchedule]);
+        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavIntro, ItnavAccess, ItnavSchedule, ApplyJuku]);
     }
 }
 </script>
