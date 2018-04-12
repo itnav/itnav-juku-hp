@@ -83,5 +83,5 @@ export default class ApplyJuku extends Vue {
             max-width: 60%
 
         .column > p:not(:last-child), .column > img
-            margin-bottom: .75rem
+            margin: .75rem 0
 </style>
