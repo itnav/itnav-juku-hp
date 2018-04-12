@@ -24,14 +24,16 @@
             .column.is-4: img(:src='imgs["itnav"]')
             .column.is-8.columns.is-multiline
                 .column.is-half: p 一般社団法人イトナブ石巻
-                .column.is-half.icon-text
+                .column.is-half.icon-text.is-centered
                     b-icon(icon='phone')
                     p 0225-90-4282
-                .column.is-half: p 〒986-0822 宮城県石巻市中央2-10-21 サトミビル1F
-                .column.is-half.icon-text
+                .column.is-half
+                    span.is-size-6.has-text-weight-bold 〒
+                    span 986-0822 宮城県石巻市中央2-10-21 サトミビル1F
+                .column.is-half.icon-text.is-centered
                     b-icon(icon='email')
                     p info@itnav.jp
-            .column.is-12.icon-text.copyright
+            .copyright.column.is-12.icon-text.is-centered
                 b-icon(icon='copyright')
                 p 2018 itnavJuku
 </template>
@@ -128,10 +130,6 @@ export default class Index extends RootVue {
 
     footer.footer
         padding-bottom: 1rem
-
-        .icon-text
-            display: flex
-            justify-content: center
 
     @keyframes bgscroll
         0%
