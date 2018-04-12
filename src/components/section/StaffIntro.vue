@@ -41,7 +41,7 @@ export default class StaffIntro extends Vue {
             position:'イトナブ石巻スタッフ',
             description:'ScratchやOzobotなどを使って小学生向けワークショップを行ったりしているScratchお姉さん',
             color: '#ff42f8',
-            comments: ['がんばるぞいっ！', 'オズボットだよ〜〜〜']
+            comments: ['プログラミングには夢が詰まってる！', '特技は高い声を出すことだよ', 'たまちゃんって呼んでね！', 'たまごが大好き、たまちゃんだよ！', '楽しいことがだいすきだよ〜']
         },
         {
             img: require('@/resources/img/staff/uk.png'),
@@ -50,7 +50,7 @@ export default class StaffIntro extends Vue {
             position:'イトナブ石巻スタッフ',
             description:'イベント企画・運営マネージャーワークショップの内容を考えたり営業なども行っている。Scratchお兄さん',
             color: '#f84545',
-            comments: ['スクラップお兄さんだーーー！', 'えいえいえーーーい']
+            comments: ['プログラミングは魔法の呪文だよ!', '好きな食べ物はカレーライス', 'スクラップお兄さんは知ってるかい？', '一緒にプログラミングを学ぼう〜', 'UK(ユーケー)って読んでね']
         },
         {
             img: require('@/resources/img/staff/yottu.png'),
@@ -59,7 +59,7 @@ export default class StaffIntro extends Vue {
             position:'イトナブ石巻スタッフ',
             description:'学生たちにプログラミングを教えたりWeb記事の作成、写真撮影などを行っている。',
             color: '#4b42ff',
-            comments: ['今日はスクラッチをやるよ！', 'ハンバーグたべたい']
+            comments: ['ダイエット中だよ〜', 'ハンバーグたべたい', '楽しく遊ぼう！', 'みんなの笑顔を見逃さないよ！', 'よっつだよ〜']
         },
         {
             img: require('@/resources/img/staff/hinode.png'),
@@ -68,7 +68,7 @@ export default class StaffIntro extends Vue {
             position:'イトナブ石巻スタッフ',
             description:'主に学生たちにプログラミングを教えるワークショップを開催したり、学校に出張授業に行っている。たまにイラストレーター',
             color: '#ff873f',
-            comments: ['今日は絵を書きました', '自転車に乗って山を登ろう']
+            comments: ['激辛料理が食べたい！', 'チャリで来た', 'ダイエット中']
         }
     ] as Staff[];
 
