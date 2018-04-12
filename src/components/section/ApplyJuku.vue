@@ -2,29 +2,29 @@
 .vue-apply-juku
     h2.title.has-text-centered 〜 お申し込み 〜
 
-    .columns.is-multiline.box
+    .columns.box
         .entry-guide.column.is-half
-            p 月刊イトナブ塾は毎月第四日曜に開催しております。
+            p.has-text-weight-semibold 開催日時：毎月第四日曜
             p （都合により一部変更する場合があります）
-            p 場所：イトナブ石巻
-            p 時間：13:00〜15:00
-            p 持ち物：特になし
+            p.has-text-weight-semibold 場所：イトナブ石巻
+            p.has-text-weight-semibold 時間：13:00〜15:00
+            p.has-text-weight-semibold 持ち物：特になし
             p （講習で使うパソコンなどはこちらで準備してあります）
-            p 参加申し込みは以下の申し込みボタンよりおこなってください。
             .apply-button.has-text-centered
-                a.button.is-primary.is-medium(href='https://docs.google.com/forms/d/1i76rydaJnVF1IkilRCyV4vhLXU1VISUZgQpEfLpYsDM/prefill')
+                a.button.is-primary.is-medium.wide-button(href='https://docs.google.com/forms/d/1i76rydaJnVF1IkilRCyV4vhLXU1VISUZgQpEfLpYsDM/edit?usp=sharing')
                     b-icon(icon='open-in-new')
                     span.text 参加申込み
         .juku-scene.column.is-half
             img(:src='imgs["juku-scene"]')
 
+    .columns.section
         .box.technomaki.column.is-half.has-text-centered
             p 講習風景や次回予告などは
             p こちらのブログに掲載されます！
             a(href='http://technomaki.jp/')
                 img(:src='imgs["technomaki"]')
 
-        .line.column.is-half.columns.has-text-centered.is-size-5
+        .line.column.is-half.columns.has-text-centered.is-size-5.is-mobile
             .column
                 img(:src='imgs["line-logo"]')
                 p 始めました！
@@ -57,11 +57,15 @@ export default class ApplyJuku extends Vue {
 
 .vue-apply-juku
     .entry-guide
-        p:not(:last-child)
-            margin-bottom: .75rem
+        p
+            margin-bottom: 1.2rem
+
+    .button
+        &.wide-button
+            width: 13rem
 
     .juku-scene > img
-        border-radius: 10px
+        border-radius: 5px
 
     .line, .technomaki
         max-width: 400px
