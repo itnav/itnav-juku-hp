@@ -20,14 +20,22 @@
             h2.has-text-centered 〜 お申し込み 〜
 
     footer.footer
-        .content.columns.has-text-centered.is-multiline
+        .content.columns.has-text-centered.is-multiline.has-text-white
             .column.is-4: img(:src='imgs["itnav"]')
             .column.is-8.columns.is-multiline
                 .column.is-half: p 一般社団法人イトナブ石巻
-                .column.is-half: p Tel : 0225-90-4282
-                .column.is-half: p Tel : 〒986-0822 宮城県石巻市中央2-10-21 サトミビル1F
-                .column.is-half: p Mail : info@itnav.jp
-            .column.is-12: p copyrights
+                .column.is-half.icon-text.is-centered
+                    b-icon(icon='phone')
+                    p 0225-90-4282
+                .column.is-half
+                    span.is-size-6.has-text-weight-bold 〒
+                    span 986-0822 宮城県石巻市中央2-10-21 サトミビル1F
+                .column.is-half.icon-text.is-centered
+                    b-icon(icon='email')
+                    p info@itnav.jp
+            .copyright.column.is-12.icon-text.is-centered
+                b-icon(icon='copyright')
+                p 2018 itnavJuku
 </template>
 
 <script lang='ts'>
