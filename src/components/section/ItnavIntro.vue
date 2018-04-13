@@ -7,7 +7,7 @@
         p イトナブとは「IT」×「遊ぶ」×「学ぶ」×「営む」×「イノベーション」の造語です。
         p 石巻の次世代を担う若者を対象にソフトウェア開発やグラフィックデザインを学ぶ拠点と機会を提供し、
         p 石巻から世界に挑戦できる環境づくりをしています。
-        a.more.button.is-primary
+        a.more.button.is-primary(href='http://itnav.jp/')
             b-icon(icon='open-in-new')
             span.text more
 </template>
