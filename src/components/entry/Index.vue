@@ -9,7 +9,7 @@
             h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
     .main
-        section.section.full: .vue-slideshow: img.full-image(:src='imgs["photo1"]')
+        section.section.full: slide-show
 
         section.section.mid(ref='juku-intro'): juku-intro
         section.section.mid(ref='staff-intro'): staff-intro
@@ -44,6 +44,7 @@ import ScrollUtil from '@/scripts/util/ScrollUtil';
 import RootVue from '@/components/base/RootVue';
 import CommonNavbar from '@/components/common/CommonNavbar.vue';
 import { NavbarMenuItem } from '@/scripts/model/part/CommonNavbar';
+import SlideShow from '@/components/section/SlideShow.vue'
 import JukuIntro from '@/components/section/JukuIntro.vue'
 import StaffIntro from '@/components/section/StaffIntro.vue';
 import ItnavIntro from '@/components/section/ItnavIntro.vue';
@@ -65,8 +66,7 @@ export default class Index extends RootVue {
     protected imgs = {
         'back': require('@/resources/img/illust/background.jpg'),
         'logo': require('@/resources/img/logo/logo.png'),
-        'itnav': require('@/resources/img/logo/itnav-logo.png'),
-        'photo1': require('@/resources/img/photo/photo1.jpg')
+        'itnav': require('@/resources/img/logo/itnav-logo.png')
     };
 
     protected menus = [
@@ -96,7 +96,7 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, JukuIntro, StaffIntro, ItnavIntro, ItnavAccess, ItnavSchedule, ApplyJuku]);
+        VueUtil.registerComponents([CommonNavbar, SlideShow, JukuIntro, StaffIntro, ItnavIntro, ItnavAccess, ItnavSchedule, ApplyJuku]);
     }
 }
 </script>
