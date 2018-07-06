@@ -4,7 +4,7 @@ header.vue-common-navbar.navbar(:class='{"is-fixed-top": isFixed}'
     .container
         .navbar-brand
             a.navbar-item(v-if='brandImg != "" || brand != ""'
-                    @click='doAction(brandClick)')
+                    @click='doAction(onBrandClick)')
                 img(v-if='brandImg != ""' :src='brandImg')
                 span(v-if='brand != ""') {{ brand }}
 
@@ -65,7 +65,7 @@ export default class CommonNavbar extends Vue {
     @Prop({type: String, default: () => ''})
     protected brandImg?: string;
     @Prop({type: Function, default: () => {}})
-    protected brandClick?: () => any;
+    protected onBrandClick?: () => any;
 
     @Prop({type: Array})
     protected menus?: NavbarMenuItem[];
@@ -98,7 +98,7 @@ export default class CommonNavbar extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-common-navbar
 </style>

@@ -39,7 +39,7 @@ export default class ItnavAccess extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-itnav-access
     .vue-google-map

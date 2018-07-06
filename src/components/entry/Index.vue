@@ -102,7 +102,7 @@ export default class Index extends RootVue {
 </script>
 
 <style lang='sass'>
-@import 'all'
+@import 'entry/all'
 
 .vue-index
     width: 100%

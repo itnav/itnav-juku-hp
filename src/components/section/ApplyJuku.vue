@@ -53,7 +53,7 @@ export default class ApplyJuku extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-apply-juku
     .entry-guide

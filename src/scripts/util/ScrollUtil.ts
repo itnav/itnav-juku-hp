@@ -3,8 +3,8 @@ export default class ScrollUtil {
 
     /**
      * jump
-     * @param elem
      * @param y
+     * @param element
      */
     public static jump(y: number,
             element: Element | null = document.scrollingElement) {
@@ -19,8 +19,9 @@ export default class ScrollUtil {
 
     /**
      * animation ease
-     * @param element
      * @param y
+     * @param duration
+     * @param element
      */
     public static animate(y: number, duration: number = 750,
             element: Element | null = document.scrollingElement) {

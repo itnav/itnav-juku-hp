@@ -22,7 +22,7 @@ export default class ItnavSchedule extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-itnav-schedule
     .vue-google-calendar

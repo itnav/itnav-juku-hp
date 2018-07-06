@@ -90,7 +90,7 @@ export default class StaffIntro extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-staff-intro
     .staff

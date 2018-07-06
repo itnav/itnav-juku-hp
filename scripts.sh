@@ -34,48 +34,29 @@ function add_page() {
         filepath="${filepath}/"
     fi
 
-    # mkdir
-    mkdir -p "./src/pages/${filepath}"
-    mkdir -p "./src/components/entry/${filepath}"
-    mkdir -p "./src/scripts/entry/${filepath}"
-
     # add pug
-    touch "./src/pages/${filepath}${filename}.pug"
-    echo "doctype html" >> "./src/pages/${filepath}${filename}.pug"
-    echo "html"                                                                          >> "./src/pages/${filepath}${filename}.pug"
-    echo "    head"                                                                      >> "./src/pages/${filepath}${filename}.pug"
-    echo "        meta(charset='utf-8')"                                                 >> "./src/pages/${filepath}${filename}.pug"
-    echo "        meta(http-equiv='X-UA-Compatible' content='IE=edge')"                  >> "./src/pages/${filepath}${filename}.pug"
-    echo "        meta(name='viewport' content='width=device-width, initial-scale=1.0')" >> "./src/pages/${filepath}${filename}.pug"
-    echo "        title"                                                                 >> "./src/pages/${filepath}${filename}.pug"
-    echo ""                                                                              >> "./src/pages/${filepath}${filename}.pug"
-    echo "    body"                                                                      >> "./src/pages/${filepath}${filename}.pug"
-    echo "        ${filename}#main"                                                      >> "./src/pages/${filepath}${filename}.pug"
+    mkdir -p "./src/pages/${filepath}"
+    pug=`cat "./_template/Entry.pug"`
+    pug=`echo "${pug//\\$_FILEPATH_\\$/${filepath}}"`
+    pug=`echo "${pug//\\$_FILENAME_\\$/${filename}}"`
+    pug=`echo "${pug//\\$_PAGENAME_\\$/${pagename}}"`
+    echo "${pug}" >> "./src/pages/${filepath}${filename}.pug"
 
     # add entry vue
-    add_vue "entry/$1" "true"
+    mkdir -p "./src/components/entry/${filepath}"
+    vue=`cat "./_template/Entry.vue"`
+    vue=`echo "${vue//\\$_FILEPATH_\\$/${filepath}}"`
+    vue=`echo "${vue//\\$_FILENAME_\\$/${filename}}"`
+    vue=`echo "${vue//\\$_PAGENAME_\\$/${pagename}}"`
+    echo "${vue}" >> "./src/components/entry/${filepath}${pagename}.vue"
 
     # add ts
-    touch "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "import ${pagename} from '@/components/entry/${filepath}${pagename}.vue';" >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "import UrlUtil, { Params } from '@/scripts/util/UrlUtil';"                 >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo ""                                                                          >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "/**"                                                                       >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo " * init"                                                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo " */"                                                                       >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "async function init(): Promise<void> {"                                    >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "    /**"                                                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "     * GetUrlParams"                                                       >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "     */"                                                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "    const params = UrlUtil.getUrlParams();"                                >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo ""                                                                          >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "    /**"                                                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "     * Mount vue root"                                                     >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "     */"                                                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "    new ${pagename}().\$mount('#main');"                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "}"                                                                         >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo ""                                                                          >> "./src/scripts/entry/${filepath}${filename}.ts"
-    echo "init();"                                                                   >> "./src/scripts/entry/${filepath}${filename}.ts"
+    mkdir -p "./src/scripts/entry/${filepath}"
+    ts=`cat "./_template/Entry.ts"`
+    ts=`echo "${ts//\\$_FILEPATH_\\$/${filepath}}"`
+    ts=`echo "${ts//\\$_FILENAME_\\$/${filename}}"`
+    ts=`echo "${ts//\\$_PAGENAME_\\$/${pagename}}"`
+    echo "${ts}" >> "./src/scripts/entry/${filepath}${filename}.ts"
 }
 
 ###
@@ -87,73 +68,28 @@ function add_page() {
 function add_vue() {
     local insert_hyphen='s/([A-Z])/-\1/g'
     local to_lower='y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/'
-    local is_root='false'
-    if [ 2 -le $# ]; then
-        is_root="$2"
-    fi
 
     # $1分解
     local filepath=`echo "${1%/*}"`
-    local filename=`echo "${1##*/}"`
+    local pagename=`echo "${1##*/}"`
+    local filename=`echo "${pagename}" | sed -E -e $insert_hyphen -e $to_lower -e "s/^-//"`
     if [ "$filepath" = "$1" ]; then
         filepath=""
     else
         filepath="${filepath}/"
     fi
 
-    # mkdir
+    # add vue
     mkdir -p "./src/components/${filepath}"
-    touch "./src/components/${filepath}${filename}.vue"
+    vue=`cat "./_template/Vue.vue"`
+    vue=`echo "${vue//\\$_FILEPATH_\\$/${filepath}}"`
+    vue=`echo "${vue//\\$_FILENAME_\\$/${filename}}"`
+    vue=`echo "${vue//\\$_PAGENAME_\\$/${pagename}}"`
+    echo "${vue}" >> "./src/components/${filepath}${pagename}.vue"
+}
 
-    # add pug
-    echo "<template lang='pug'>"                          >> "./src/components/${filepath}${filename}.vue"
-    echo ".vue${filename}"                                | sed -E -e $insert_hyphen -e $to_lower >> "./src/components/${filepath}${filename}.vue"
-    if [ "$is_root" = "true" ]; then
-    echo "    .reactive-title {{ reactiveTitle() }}"      >> "./src/components/${filepath}${filename}.vue"
-    fi
-    echo "</template>"                                    >> "./src/components/${filepath}${filename}.vue"
-    echo ""                                               >> "./src/components/${filepath}${filename}.vue"
-
-    # add ts
-    echo "<script lang='ts'>"                                        >> "./src/components/${filepath}${filename}.vue"
-    echo "import { Vue, Component } from 'vue-property-decorator';"  >> "./src/components/${filepath}${filename}.vue"
-    echo "import VueUtil from '@/scripts/util/VueUtil';"             >> "./src/components/${filepath}${filename}.vue"
-    if [ "$is_root" = "true" ]; then
-    echo "import RootVue from '@/components/base/RootVue';"          >> "./src/components/${filepath}${filename}.vue"
-    echo "import Buefy from 'buefy';"                                >> "./src/components/${filepath}${filename}.vue"
-    echo ""                                                          >> "./src/components/${filepath}${filename}.vue"
-    echo "Vue.use(Buefy);"                                           >> "./src/components/${filepath}${filename}.vue"
-    fi
-    echo ""                                                          >> "./src/components/${filepath}${filename}.vue"
-    echo "/**"                                                       >> "./src/components/${filepath}${filename}.vue"
-    echo " * Vue Component"                                          >> "./src/components/${filepath}${filename}.vue"
-    echo " */"                                                       >> "./src/components/${filepath}${filename}.vue"
-    echo "@Component"                                                >> "./src/components/${filepath}${filename}.vue"
-    if [ "$is_root" = "true" ]; then
-    echo "export default class ${filename} extends RootVue {"        >> "./src/components/${filepath}${filename}.vue"
-    echo "    public title = '';"                                    >> "./src/components/${filepath}${filename}.vue"
-    echo ""                                                          >> "./src/components/${filepath}${filename}.vue"
-    echo "    protected beforeCreate(): void {"                      >> "./src/components/${filepath}${filename}.vue"
-    echo "        VueUtil.registerComponents([]);"                   >> "./src/components/${filepath}${filename}.vue"
-    echo "    }"                                                     >> "./src/components/${filepath}${filename}.vue"
-    else
-    echo "export default class ${filename} extends Vue {"            >> "./src/components/${filepath}${filename}.vue"
-    fi
-    echo "}"                                                         >> "./src/components/${filepath}${filename}.vue"
-    echo "</script>"                                                 >> "./src/components/${filepath}${filename}.vue"
-    echo ""                                                          >> "./src/components/${filepath}${filename}.vue"
-
-    # add sass
-    if [ "$is_root" = "true" ]; then
-    echo "<style lang='sass'>"                            >> "./src/components/${filepath}${filename}.vue"
-    echo "@import 'all'"                                  >> "./src/components/${filepath}${filename}.vue"
-    else
-    echo "<style lang='sass' scoped>"                     >> "./src/components/${filepath}${filename}.vue"
-    echo "@import 'variable'"                             >> "./src/components/${filepath}${filename}.vue"
-    fi
-    echo ""                                               >> "./src/components/${filepath}${filename}.vue"
-    echo ".vue${filename}"                                | sed -E -e $insert_hyphen -e $to_lower >> "./src/components/${filepath}${filename}.vue"
-    echo "</style>"                                       >> "./src/components/${filepath}${filename}.vue"
+function build_typedoc() {
+    typedoc --name "$1" --mode 'file' --out './document/typedoc' './src/scripts'
 }
 
 if [ -z ${2+UNDEF} ]; then

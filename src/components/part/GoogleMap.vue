@@ -24,7 +24,7 @@ export default class GoogleMap extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-google-map
 </style>

@@ -65,7 +65,7 @@ export default class GoogleCalendar extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-google-calendar
     border-width: 0

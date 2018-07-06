@@ -51,7 +51,7 @@ export default class JukuIntro extends Vue {
 </script>
 
 <style lang='sass' scoped>
-@import 'variable'
+@import 'entry/variable'
 
 .vue-juku-intro
     .about

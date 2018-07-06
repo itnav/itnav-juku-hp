@@ -1,6 +1,5 @@
 <template lang='pug'>
-.vue-slide-show
-    img.full-image(:src='imgs["photo1"]')
+.vue-$_FILENAME_$
 </template>
 
 <script lang='ts'>
@@ -11,15 +10,12 @@ import VueUtil from '@/scripts/util/VueUtil';
  * Vue Component
  */
 @Component
-export default class SlideShow extends Vue {
-    protected imgs = {
-        'photo1': require('@/resources/img/photo/photo1.jpg')
-    } as Imgs;
+export default class $_PAGENAME_$ extends Vue {
 }
 </script>
 
 <style lang='sass' scoped>
 @import 'entry/variable'
 
-.vue-slide-show
+.vue-$_FILENAME_$
 </style>
