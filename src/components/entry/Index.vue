@@ -1,5 +1,5 @@
 <template lang='pug'>
-.vue-index(:style='{"background-image": `url("${imgs[\"back\"]}")`}')
+.vue-index(:style='{"background-image": getUrl()}')
     .reactive-title {{ reactiveTitle() }}
     common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]'
         :brand-click='brandClick' :menus='menus')
@@ -17,6 +17,7 @@
         section.section.mid(ref='itnav-access'): itnav-access
         section.section.mid(ref='itnav-schedule'): itnav-schedule
         section.section.mid(ref='apply-juku'): apply-juku
+        section.section.full(ref='apply-juku'): support
 
     footer.footer
         .content.columns.has-text-centered.is-multiline.has-text-white
@@ -51,6 +52,15 @@ import ItnavIntro from '@/components/section/ItnavIntro.vue';
 import ItnavAccess from '@/components/section/ItnavAccess.vue';
 import ItnavSchedule from '@/components/section/ItnavSchedule.vue';
 import ApplyJuku from '@/components/section/ApplyJuku.vue';
+import Support from '@/components/section/Support.vue'
+
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// require styles
+import 'swiper/dist/css/swiper.css'
+
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
 
 import Buefy from 'buefy';
 
@@ -96,7 +106,13 @@ export default class Index extends RootVue {
 
     protected beforeCreate(): void {
         // Inner Vue 登録
-        VueUtil.registerComponents([CommonNavbar, SlideShow, JukuIntro, StaffIntro, ItnavIntro, ItnavAccess, ItnavSchedule, ApplyJuku]);
+        VueUtil.registerComponents([CommonNavbar, SlideShow, JukuIntro, StaffIntro, ItnavIntro, ItnavAccess, ItnavSchedule, ApplyJuku, Support]);
+    }
+
+    private getUrl(): string{
+        const url =  `url("${this.imgs.back}")`;
+        console.log(url);
+        return url;
     }
 }
 </script>
