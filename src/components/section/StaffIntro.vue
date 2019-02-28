@@ -39,9 +39,9 @@ export default class StaffIntro extends Vue {
             nickname:'たま',
             name:'千葉 沙織',
             position:'イトナブ石巻スタッフ',
-            description:'ScratchやOzobotなどを使って小学生向けワークショップを行ったりしているScratchお姉さん',
+            description:'小学生にプログラミングを教えているよ。月刊イトナブ塾の塾長だよ！',
             color: '#ff42f8',
-            comments: ['プログラミングには夢が詰まってる！', '特技は高い声を出すことだよ', 'たまちゃんって呼んでね！', 'たまごが大好き、たまちゃんだよ！', '楽しいことがだいすきだよ〜']
+            comments: ['プログラミングには夢が詰まってる！', '特技は高い声を出すことだよ', 'たまちゃんって呼んでね！', 'たまごが大好き、たまちゃんだよ！', 'ゲームだいすき！']
         },
         {
             img: require('@/resources/img/staff/uk.png'),
