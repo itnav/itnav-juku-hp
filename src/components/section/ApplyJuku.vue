@@ -4,7 +4,7 @@
 
     .columns.box
         .entry-guide.column.is-half
-            p.has-text-weight-semibold 開催日時：毎月第四日曜
+            p.has-text-weight-semibold 開催日時：毎月第4日曜
             p （都合により一部変更する場合があります）
             p.has-text-weight-semibold 場所：イトナブ石巻
             p.has-text-weight-semibold 時間：13:00〜15:00
