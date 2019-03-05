@@ -1,7 +1,16 @@
 <template lang='pug'>
 .vue-support
-    h2.title.has-text-centered 〜 遊びから学びへ 〜
-    p.has-text-centered aaaaaaaaaaaaaaaaaaaaaaa
+    h2.support.title.has-text-centered 〜 後援 〜
+    
+    .supporter
+        a(href="https://www.octo-llc.com/")
+            img(:src='imgs["octo"]')
+        a(href="https://www.kick.co.jp/")
+            img(:src='imgs["kick"]')
+    //- .Salesforce
+        a(href="")
+        
+
     
 </template>
 
@@ -18,6 +27,12 @@ import VueUtil from '@/scripts/util/VueUtil';
 @Component
 export default class Support extends Vue {
 
+protected imgs = {
+    'octo':require('@/resources/img/logo/Octo.png'),
+    'kick': require('@/resources/img/logo/kick.png')
+};
+
+
 }
 </script>
 
@@ -25,5 +40,12 @@ export default class Support extends Vue {
 @import 'entry/variable'
 
 .vue-support
+    position: relative
     
+.supporter
+    display: -webkit-flex
+    display: flex
+
+
+
 </style>
