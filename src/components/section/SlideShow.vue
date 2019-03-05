@@ -11,14 +11,12 @@
             img(:src='imgs["photo4"]')
         swiper-slide
             img(:src='imgs["photo5"]')
-        .swiper-pagination(slot="pagination")
 </template>
 
 
 <script lang='ts'>
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import VueUtil from '@/scripts/util/VueUtil';
-import { setTimeout } from 'timers';
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
@@ -36,27 +34,14 @@ export default class SlideShow extends Vue {
 
     } as Imgs;  
 
-    protected currentImgIndex = 0;
-
     protected swiperOption = {
-        pagination : {
-            el : '.swiper-pagination'
-        },
         autoplay: {
             delay: 4000,
             disableOnInteraction: false
-          },
+        },
+        loop: true,
     };
-
-    @Watch('currentImgIndex')
-    protected checkValidation(): void {
-        if (this.currentImgIndex < 0) {
-            this.currentImgIndex = Object.keys(this.imgs).length - 1;
-        } else if (this.currentImgIndex
-                > Object.keys(this.imgs).length - 1) {
-            this.currentImgIndex = 0
-        }
-    } 
+    
 
 }
 </script>
