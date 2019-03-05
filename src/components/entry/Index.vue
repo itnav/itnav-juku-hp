@@ -16,12 +16,13 @@
         section.section.full(ref='itnav-intro'): itnav-intro
         section.section.mid(ref='itnav-access'): itnav-access
         section.section.mid(ref='itnav-schedule'): itnav-schedule
-        section.section.mid(ref='apply-juku'): apply-juku
-        section.section.full(ref='apply-juku'): support
+        section.section.mid(ref='4'): apply-juku
+        section.section.mid(ref='apply-juku'): support
 
     footer.footer
         .content.columns.has-text-centered.is-multiline.has-text-white
-            .column.is-4: img(:src='imgs["itnav"]')
+            .column.is-4: a(href="http://itnav.jp/")
+                img(:src='imgs["itnav"]')
             .column.is-8.columns.is-multiline
                 .column.is-half: p 一般社団法人イトナブ石巻
                 .column.is-half.icon-text.is-centered
@@ -97,6 +98,9 @@ export default class Index extends RootVue {
         } },
         { pack:'fa', icon: 'paper-plane', text: 'お申し込み', onClick: () => {
             ScrollUtil.animate((this.$refs['apply-juku'] as HTMLElement).offsetTop);
+        } },
+        { pack:'fa', icon: 'users', text: '後援', onClick: () => {
+            ScrollUtil.animate((this.$refs['support'] as HTMLElement).offsetTop);
         } }
     ] as NavbarMenuItem[];
 
@@ -139,6 +143,11 @@ export default class Index extends RootVue {
         margin-left: auto
         margin-right: auto
 
+        &.large
+            max-width: 90%
+            padding-left: 0
+            padding-right: 0
+
         &.full
             max-width: 100%
             padding-left: 0
@@ -146,9 +155,6 @@ export default class Index extends RootVue {
 
         &.mid
             max-width: 1100px
-
-    footer.footer
-        padding-bottom: 1rem
 
     @keyframes bgscroll
         0%
