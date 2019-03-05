@@ -22,7 +22,7 @@ import VueUtil from '@/scripts/util/VueUtil';
 @Component
 export default class ItnavIntro extends Vue {
     protected imgs: Imgs = {
-        hackathon: require('@/resources/img/photo/itnav.jpg')
+        hackathon: require('@/resources/img/photo/itnavphoto.jpg')
     }
 }
 </script>
