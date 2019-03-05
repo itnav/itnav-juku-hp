@@ -23,15 +23,11 @@
             p こちらのブログに掲載されます！
             a(href='http://technomaki.jp/')
                 img(:src='imgs["technomaki"]')
-
-        .line.column.is-half.columns.has-text-centered.is-size-5.is-mobile
-            .column
-                img(:src='imgs["line-logo"]')
-                p 始めました！
-                p 参加申し込みもできます！
-            .column
-                img(:src='imgs["line-qr"]')
-                p @qcc2983u
+        .line
+            a(href="https://line.me/R/ti/p/%40qcc2983u")
+                img(:src='imgs["line"]')
+            
+             
 </template>
 
 <script lang='ts'>
@@ -44,11 +40,12 @@ import VueUtil from '@/scripts/util/VueUtil';
 @Component
 export default class ApplyJuku extends Vue {
     protected imgs = {
-        'juku-scene': require('@/resources/img/photo/juku-scene.jpg'),
+        'juku-scene': require('@/resources/img/photo/juku-image.png'),
         'technomaki': require('@/resources/img/logo/technomaki.png'),
-        'line-logo': require('@/resources/img/logo/line.png'),
-        'line-qr': require('@/resources/img/illust/qr.jpg')
+        'line': require('@/resources/img/logo/LINE.png'),
+        
     }
+
 }
 </script>
 
@@ -80,11 +77,8 @@ export default class ApplyJuku extends Vue {
             padding-bottom: 0.4rem
 
     .line
-        background-color: #2cbf13
-        color: #ffffff
-
         img
-            max-width: 60%
+            max-width: 100%
 
         .column > p:not(:last-child), .column > img
             margin: .75rem 0
