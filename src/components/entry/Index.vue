@@ -1,4 +1,5 @@
 <template lang='pug'>
+
 .vue-index(:style='{"background-image": getUrl()}')
     .reactive-title {{ reactiveTitle() }}
     common-navbar.is-light(:is-fixed='true' :brand-img='imgs["logo"]'
