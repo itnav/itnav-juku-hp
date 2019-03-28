@@ -18,7 +18,7 @@
         section.section.mid(ref='itnav-access'): itnav-access
         section.section.mid(ref='itnav-schedule'): itnav-schedule
         section.section.mid(ref='4'): apply-juku
-        section.section.mid(ref='apply-juku'): support
+        section.section.mid(ref='support'): support
 
     footer.footer
         .content.columns.has-text-centered.is-multiline.has-text-white
@@ -138,6 +138,7 @@ export default class Index extends RootVue {
             width: 100%
             height: auto
             animation: bounce 1s
+            
 
     section
         max-width: 800px
@@ -170,4 +171,6 @@ export default class Index extends RootVue {
             transform: scale(1.3)
         100%
             transform: scale(1)
+
+
 </style>
