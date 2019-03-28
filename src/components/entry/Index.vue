@@ -10,7 +10,7 @@
             h1: img.logo(alt='月刊イトナブ塾' :src='imgs["logo"]')
 
     .main
-        section.section.full: slide-show
+        section.section.full.slide: slide-show
 
         section.section.mid(ref='juku-intro'): juku-intro
         section.section.mid(ref='staff-intro'): staff-intro
@@ -130,6 +130,11 @@ export default class Index extends RootVue {
     overflow-x: hidden
     animation: bgscroll 30s linear infinite
 
+    .slide
+        padding-top: 0px
+        padding-bottom: 50px
+
+    
     .full-image
         width: 100%
 
