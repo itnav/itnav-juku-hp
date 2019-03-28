@@ -39,6 +39,9 @@ export default class ItnavIntro extends Vue {
         margin-right: auto
         max-width: 800px
 
+        .box.has-text-centered
+        margin-top: 50px
+
         p:not(:last-child)
             margin-bottom: 0.75em
 
