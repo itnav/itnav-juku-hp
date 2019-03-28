@@ -1,6 +1,7 @@
 <template lang='pug'>
 .vue-staff-intro
     h2.title.has-text-centered 〜 講師紹介 〜
+    
     .staffs.columns.is-multiline.is-mobile
         .column.is-4(v-for='staff in staffs')
             a.staff(:style='{ "background-color": staff.color }' @click='speakComment(staff)')
@@ -39,7 +40,7 @@ export default class StaffIntro extends Vue {
             nickname:'たま',
             name:'千葉 沙織',
             position:'イトナブ石巻スタッフ',
-            description:'小学生にプログラミングを教えているよ。月刊イトナブ塾の塾長だよ！',
+            description:'月刊イトナブ塾の塾長。普段は小学生にプログラミングを教えているよ。Scratchでゲームを作るのが得意！',
             color: '#ff42f8',
             comments: ['プログラミングには夢が詰まってる！', '特技は高い声を出すことだよ', 'たまちゃんって呼んでね！', 'たまごが大好き、たまちゃんだよ！', 'ゲームだいすき！']
         },
@@ -97,7 +98,7 @@ export default class StaffIntro extends Vue {
         position: relative
         display: block
         width: 100%
-        max-width: 250px
+        max-width: 220px
         margin-left: auto
         margin-right: auto
         border-top-left-radius: 50% 26%
